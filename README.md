@@ -31,20 +31,22 @@ El dataset está compuesto por \<8\> columnas, con la siguiente descripción:
 
 ## Tipos implementados
 
-Descrbe aquí la o las namedtuple que defines en tu proyecto.
+La namedtuple utilizada es "Jardineria", la cual recoge las columnas del csv.
 
 ## Funciones implementadas
-Añade aquí descripciones genéricas de las funciones, que luego debes acompañar con comentarios de tipo documentación en el código
+lee_jardineria--> lee el dataset jardineria_50.csv
+conv_date--> convierte la columna fecha(str) a tipo datetime
+conv_hora--> convierte la columna hora(str) a tipo datetime
 
 ### \<modulo 1\>
 
-* **<funcion 1>**: Descripción de la función 1.
+* **<lee_jardineria>**: lee el dataset jardineria_50.csv
 * **<funcion 2>**: Descripción de la función 2.
 * ...
 
 ### \<test modulo 1\>
 
-* **<test funcion 1>**: Descripción de las pruebas realizadas a la función 1.
+* **<test_lee_jardineria>**: verifica el funcionamiento de la función "lee_jardineria".
 * **<test funcion 2>**: Descripción de las pruebas realizadas a la función 2.
 * ...
 * 

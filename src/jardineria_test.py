@@ -2,7 +2,7 @@ from jardineria import *
 def test_lee_jardineria ():
     print("\nNúmero de registros leidos=", len(datos))
     print("Los tres primeros registros son:", datos[:3])
-    print("Los tres ultimos registros son:", datos[:-3])
+    print("Los tres ultimos registros son:", datos[-3:])
 
 
 
