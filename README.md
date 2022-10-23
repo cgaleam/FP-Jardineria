@@ -16,8 +16,6 @@ Aquí debes añadir la descripción del dataset y un enunciado del dominio del p
     
 ## Estructura del *dataset*
 
-Aquí debes describir la estructura del dataset explicando qué representan los datos que contiene y la descripción de cada una de las columnas.
-
 El dataset está compuesto por \<8\> columnas, con la siguiente descripción:
 
 * **\<columna 1>**: de tipo \<cadena\>, representa la calle
@@ -34,24 +32,25 @@ El dataset está compuesto por \<8\> columnas, con la siguiente descripción:
 La namedtuple utilizada es "Jardineria", la cual recoge las columnas del csv.
 
 ## Funciones implementadas
-lee_jardineria--> lee el dataset jardineria_50.csv
-conv_date--> convierte la columna fecha(str) a tipo datetime
-conv_hora--> convierte la columna hora(str) a tipo datetime
+lee_jardineria--> lee el dataset jardineria_50.csv.
+conv_date--> convierte la columna fecha(str) a tipo datetime.
+conv_hora--> convierte la columna hora(str) a tipo datetime.
+test_lee_jardineria--> verifica el funcionamiento de la función "lee_jardineria".
 
-### \<modulo 1\>
+### \<jardineria\>
 
 * **<lee_jardineria>**: lee el dataset jardineria_50.csv
 * **<funcion 2>**: Descripción de la función 2.
 * ...
 
-### \<test modulo 1\>
+### \<test jardineria\>
 
 * **<test_lee_jardineria>**: verifica el funcionamiento de la función "lee_jardineria".
 * **<test funcion 2>**: Descripción de las pruebas realizadas a la función 2.
 * ...
 * 
-### \<modulo 2\>
+### \<convers\>
 
-* **<funcion 1>**: Descripción de la función 1.
-* **<funcion 2>**: Descripción de la función 2.
+* **<conv_date>**: convierte la columna fecha(str) a tipo datetime.
+* **<conv_hora>**: convierte la columna hora(str) a tipo datetime.
 * ...
