@@ -3,6 +3,7 @@ from datetime import datetime
 import csv
 from convers import *
 
+#ENTREGA 1------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Jardineria=namedtuple('jardineria', 'calle, numero, fecha, hora, importe, num_jardineros, trabajos, contrato_mantenimiento')
 
 def lee_jardineria(nombre_fichero):
@@ -23,4 +24,49 @@ def lee_jardineria(nombre_fichero):
 
             res.append(Jardineria(calle, numero, fecha, hora, importe, num_jardineros, trabajos, contrato_mantenimiento))
             
+    return res
+
+
+#ENTREGA 2------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Bloque 1
+def  filtra_por_calle_y_numero(jardineria, num_jardineros, calles):
+    res=list()
+    for i in jardineria:
+        if i.num_jardineros==num_jardineros and i.calle in calles:
+            res.append((i.calle, i.numero, i.fecha))
+    return res
+
+
+def calcular_total_contratos(jardineria):
+    res=0
+    for i in jardineria:
+        if i.contrato_mantenimiento==True:
+            res+=i.contrato_mantenimiento
+    return res
+
+
+#Bloque 2
+def mayor_num_jardineros(jardineria):
+    maximo= max(jardineria, key= lambda x:x.num_jardineros)
+    res=[i for i in jardineria if i.num_jardineros==maximo.num_jardineros]
+    return res
+
+
+def orden_importes(jardineria):
+    conj=set((i.importe, i.calle, i.numero, i.fecha, i.hora,\
+             i.num_jardineros, i.trabajos, i.contrato_mantenimiento) for i in jardineria)
+    res=list(conj)
+    res.sort(reverse=True)
+    return res
+
+ 
+def agrupa_calle_mayor_importe(jardineria):
+    res=dict()
+    for i in jardineria:
+        importe=i.importe
+        if importe in res: #la clave ya esta en el diccionario
+            res[importe].append(i.calle)
+        else: # la clave no esta en el diccionario
+            res[importe]= [i.calle]
     return res

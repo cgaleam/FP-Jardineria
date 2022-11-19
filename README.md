@@ -11,8 +11,7 @@ Aquí debes añadir la descripción del dataset y un enunciado del dominio del p
   * **\<jardineria_test.py\>**: Describe aquí el módulo de pruebas.
   * **\<convers.py\>**: Módulo destinado a la conversión de tipos. 
 * **/data**: Contiene el dataset o datasets del proyecto
-    * **\<jardineria_50.csv\>**: Añade una descripción genérica del dataset.
-    * **\<dataset2.csv\>**: Añade una descripción del resto de datasets que puedas tener.
+    * **\<jardinería_50.csv\>**: Añade una descripción genérica del dataset.
     
 ## Estructura del *dataset*
 
@@ -40,14 +39,20 @@ test_lee_jardineria--> verifica el funcionamiento de la función "lee_jardineria
 ### \<jardineria\>
 
 * **<lee_jardineria>**: lee el dataset jardineria_50.csv
-* **<funcion 2>**: Descripción de la función 2.
-* ...
+* **<filtra_por_calle_y_numero>**: Filtra las tuplas segun la calle y numero de jardineros, devuelve calle, numero y fecha .
+* **<calcular_total_contratos>**: Calcula el total de contratos de mantenimiento.
+* **<mayor_num_jardineros>**: Obtiene las tuplas con el maximo valor en la variable num_jardineros.
+* **<orden_importes>**: Ordena las tuplas de tipo jardineria de mayor a menor importe.
+* **<agrupa_calle_mayor_importe>**: Agrupa las calles con su importe correspondiente.
 
 ### \<test jardineria\>
 
 * **<test_lee_jardineria>**: verifica el funcionamiento de la función "lee_jardineria".
-* **<test funcion 2>**: Descripción de las pruebas realizadas a la función 2.
-* ...
+* **<test_filtra_por_calle_y_numero>**: verifica el funcionamiento de la función "filtra_por_calle_y_numero".
+* **<test_calcular_total_contratos>**: verifica el funcionamiento de la función "calcular_total_contratos".
+* **<test_mayor_num_jardineros>**: verifica el funcionamiento de la función "mayor_num_jardineros".
+* **<test_orden_importes>**: verifica el funcionamiento de la función "orden_importes".
+* **<test_agrupa_calle_mayor_importe>**: verifica el funcionamiento de la función "agrupa_calle_mayor_importe".
 * 
 ### \<convers\>
 
