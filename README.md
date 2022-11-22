@@ -8,8 +8,10 @@ Aquí se describen y nombran los elementos utilizados:
 ## Estructura de las carpetas del proyecto
 
 * **/src**: Contiene los diferentes módulos de Python que conforman el proyecto.
-  * **\<jardineria.py\>**: Describe aquí el módulo principal.
-  * **\<jardineria_test.py\>**: Describe aquí el módulo de pruebas.
+  * **\<jardineria.py\>**: Este es el módulo principal donde se desarrollrán y llevarán
+  a cabo todas las funciones del proyecto que no imprimen nada, solo forman parte del desarrollo.
+  * **\<jardineria_test.py\>**: Este módulo está únicamente destinado a probar el correcto
+  funcionamiento de las funciones del módulo "jardineria.py"
   * **\<convers.py\>**: Módulo destinado a la conversión de tipos. 
 * **/data**: Contiene el dataset o datasets del proyecto
     * **\<jardinería_50.csv\>**: Añade una descripción genérica del dataset.
