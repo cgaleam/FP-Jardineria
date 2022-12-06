@@ -29,33 +29,36 @@ def lee_jardineria(nombre_fichero):
 
 #ENTREGA 2------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
 #Bloque 1
+
 def  filtra_por_calle_y_numero(jardineria, num_jardineros, calles):
     res=list()
-    for i in jardineria:
-        if i.num_jardineros==num_jardineros and i.calle in calles:
-            res.append((i.calle, i.numero, i.fecha))
+    for j in jardineria:
+        if j.num_jardineros==num_jardineros and j.calle in calles:
+            res.append((j.calle, j.numero, j.fecha))
     return res
 
 
 def calcular_total_contratos(jardineria):
     res=0
-    for i in jardineria:
-        if i.contrato_mantenimiento==True:
-            res+=i.contrato_mantenimiento
+    for j in jardineria:
+        if j.contrato_mantenimiento==True:
+            res+=j.contrato_mantenimiento
     return res
 
 
 #Bloque 2
+
 def mayor_num_jardineros(jardineria):
     maximo= max(jardineria, key= lambda x:x.num_jardineros)
-    res=[i for i in jardineria if i.num_jardineros==maximo.num_jardineros]
+    res=[j for j in jardineria if j.num_jardineros==maximo.num_jardineros]
     return res
 
 
 def orden_importes(jardineria):
-    conj=set((i.importe, i.calle, i.numero, i.fecha, i.hora,\
-             i.num_jardineros, i.trabajos, i.contrato_mantenimiento) for i in jardineria)
+    conj=set((j.importe, j.calle, j.numero, j.fecha, j.hora,\
+             j.num_jardineros, j.trabajos, j.contrato_mantenimiento) for j in jardineria)
     res=list(conj)
     res.sort(reverse=True)
     return res
@@ -63,10 +66,59 @@ def orden_importes(jardineria):
  
 def agrupa_calle_mayor_importe(jardineria):
     res=dict()
-    for i in jardineria:
-        importe=i.importe
+    for j in jardineria:
+        importe=j.importe
         if importe in res: #la clave ya esta en el diccionario
-            res[importe].append(i.calle)
+            res[importe].append(j.calle)
         else: # la clave no esta en el diccionario
-            res[importe]= [i.calle]
+            res[importe]= [j.calle]
+    return res
+
+
+#ENTREGA 3------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+#Bloque 3
+
+def contar_calle_por_nombre(jardineria):
+    res=dict()
+    for j in jardineria:
+         clave=j.calle
+         if clave in res: 
+            res[clave]= res[clave]+1
+         else: 
+            res[clave]=1
+    return res
+
+
+def calle_con_mayor_numero_de_jardineros(jardineria):
+    res=dict()
+    for j in jardineria:
+         clave=j.calle
+         if clave in res: 
+            res[clave]+= j.num_jardineros
+         else: 
+            res[clave]=j.num_jardineros
+    return max(res, key=res.get)
+
+
+def calles_menor_importe(jardineria):
+    res=dict()
+    for j in jardineria:
+         clave=j.calle
+         if clave in res: 
+            res[clave]= min(j.importe, res[clave])
+         else: 
+            res[clave]=j.importe
+    return res 
+
+
+def calles_y_sus_importes_ordenados(jardineria):
+    res=dict()
+    for j in jardineria:
+         clave=j.calle
+         if clave in res: 
+            res[clave].append(j.importe)
+         else: 
+            res[clave]=[j.importe]
     return res

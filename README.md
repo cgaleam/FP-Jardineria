@@ -20,14 +20,14 @@ Aquí se describen y nombran los elementos utilizados:
 
 El dataset está compuesto por \<8\> columnas, con la siguiente descripción:
 
-* **\<columna 1>**: de tipo \<cadena\>, representa la calle
-* **\<columna 2>**: de tipo \<entero\>, representa el numero de la casa
-* **\<columna 3>**: de tipo \<datetime\>, representa la fecha 
-* **\<columna 4>**: de tipo \<datetime\>, representa la hora
-* **\<columna 5>**: de tipo \<real\>, representa el importe
-* **\<columna 6>**: de tipo \<entero\>, representa el numero de jardineros
-* **\<columna 7>**: de tipo \<cadena\>, representa los trabajos realizados
-* **\<columna 8>**: de tipo \<lógico\>, representa el contrato de mantenimiento
+* **\<calle>**: de tipo \<cadena\>, representa la calle
+* **\<numero>**: de tipo \<entero\>, representa el numero de la casa
+* **\<fecha>**: de tipo \<datetime\>, representa la fecha 
+* **\<hora>**: de tipo \<datetime\>, representa la hora
+* **\<importe>**: de tipo \<real\>, representa el importe
+* **\<Nro.jardineros>**: de tipo \<entero\>, representa el numero de jardineros
+* **\<Trabajos realizados>**: de tipo \<cadena\>, representa los trabajos realizados
+* **\<Contrato de mantenimiento>**: de tipo \<lógico\>, representa el contrato de mantenimiento
 
 ## Tipos implementados
 

@@ -27,12 +27,35 @@ def test_orden_importes():
     print("Las tareas ordeadas de mayor importe a menor quedarían:")
     print(orden_importes(datos))
 
-
 def test_agrupa_calle_mayor_importe():
     print("-------------------------------------------------------------")
     print("TEST DE LA FUNCIÓN calle_mayor_importe:")
     print(f"Las calles agrupadas por su importes quedarían:")
     print(agrupa_calle_mayor_importe(datos))
+
+def test_contar_calle_por_nombre():
+    print("-------------------------------------------------------------")
+    print("TEST DE LA FUNCIÓN contar_calle_por_nombre:")
+    print(f"El numero de trabajos en cada calle viene dado por:{contar_calle_por_nombre(datos)}")
+
+def test_calle_mayor_numero_de_jardineros():
+    print("-------------------------------------------------------------")
+    print("TEST DE LA FUNCIÓN calle_mayor_numero_de_jardineros:")
+    print(f"La calle con mayor numero de jardineros es: {calle_con_mayor_numero_de_jardineros(datos)}")
+
+def test_calles_menor_importe():
+    print("-------------------------------------------------------------")
+    print("TEST DE LA FUNCIÓN calles_menor_importe:")
+    print("Las calles y sus importes de trabajo más bajos:")
+    print(calles_menor_importe(datos))
+
+
+def test_calles_y_sus_importes_ordenados():
+    print("-------------------------------------------------------------")
+    print("TEST DE LA FUNCIÓN calles_y_sus_importes_ordenados:")
+    print("Las calles y sus respectivos importes ordenados de mayor a menor son:")
+    print(calles_y_sus_importes_ordenados(datos))
+
 
 
 
@@ -44,3 +67,7 @@ test_calcular_total_contratos()
 test_mayor_num_jardineros()
 test_orden_importes()
 test_agrupa_calle_mayor_importe()
+test_contar_calle_por_nombre()
+test_calle_mayor_numero_de_jardineros()
+test_calles_menor_importe()
+test_calles_y_sus_importes_ordenados()
