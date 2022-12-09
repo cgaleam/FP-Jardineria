@@ -2,6 +2,7 @@ from collections import namedtuple
 from datetime import datetime
 import csv
 from convers import *
+from matplotlib import pyplot as plt
 
 #ENTREGA 1------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Jardineria=namedtuple('jardineria', 'calle, numero, fecha, hora, importe, num_jardineros, trabajos, contrato_mantenimiento')
@@ -113,12 +114,29 @@ def calles_menor_importe(jardineria):
     return res 
 
 
-def calles_y_sus_importes_ordenados(jardineria):
+def calles_y_sus_importes_ordenados(jardineria, n=3):
     res=dict()
-    for j in jardineria:
+    jardineria_lista_ordenada=sorted(jardineria, reverse=True)[:n]
+    for j in jardineria_lista_ordenada:
          clave=j.calle
          if clave in res: 
             res[clave].append(j.importe)
          else: 
             res[clave]=[j.importe]
     return res
+
+#Bloque 4
+
+def grafica(jardineria):
+    importes = []
+    for j in jardineria:
+        importes.append(j.importe)
+    
+    # Componemos y visualizamos la gráfica
+    plt.title(f"Evolución de importes de cada trabajo")
+    plt.xlabel("Numero de trabajos")
+    plt.ylabel("importes")
+    plt.plot(importes, label='importes')
+    plt.legend()
+    plt.show()
+    

@@ -47,6 +47,12 @@ test_lee_jardineria--> verifica el funcionamiento de la función "lee_jardineria
 * **<mayor_num_jardineros>**: Obtiene las tuplas con el maximo valor en la variable num_jardineros.
 * **<orden_importes>**: Ordena las tuplas de tipo jardineria de mayor a menor importe.
 * **<agrupa_calle_mayor_importe>**: Agrupa las calles con su importe correspondiente.
+* **<contar_calle_por_nombre>**: Calcula el numero de trabajos que se han realizado en cada calle.
+* **<calle_mayor_numero_de_jardineros>**: Obtiene la calle con más jardineros(suma de todos los trabajadores).
+* **<calles_menor_importe>**: Agrupa las calles con su menor importe respectivamente.
+* **<calles_y_sus_importes_ordenados>**: Agrupa las calles con sus importes de menor a mayor.
+* **<grafica>**: Gráfica que muestra la evolución de los distintos importes con respecto a los trabajos realizados.
+
 
 ### \<test jardineria\>
 
@@ -56,7 +62,13 @@ test_lee_jardineria--> verifica el funcionamiento de la función "lee_jardineria
 * **<test_mayor_num_jardineros>**: verifica el funcionamiento de la función "mayor_num_jardineros".
 * **<test_orden_importes>**: verifica el funcionamiento de la función "orden_importes".
 * **<test_agrupa_calle_mayor_importe>**: verifica el funcionamiento de la función "agrupa_calle_mayor_importe".
-* 
+* **<test_contar_calle_por_nombre>**: verifica el funcionamiento de la función "contar_calle_por_nombre".
+* **<test_calle_mayor_numero_de_jardineros>**: verifica el funcionamiento de la función "calle_mayor_numero_de_jardineros".
+* **<test_calles_menor_importe>**: verifica el funcionamiento de la función "calles_menor_importe".
+* **<test_calles_y_sus_importes_ordenados>**: verifica el funcionamiento de la función "calles_y_sus_importes_ordenados".
+* **<test_grafica>**: verifica el funcionamiento de la función "grafica".
+
+
 ### \<convers\>
 
 * **<conv_date>**: convierte la columna fecha(str) a tipo datetime.

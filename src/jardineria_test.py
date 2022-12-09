@@ -53,11 +53,14 @@ def test_calles_menor_importe():
 def test_calles_y_sus_importes_ordenados():
     print("-------------------------------------------------------------")
     print("TEST DE LA FUNCIÓN calles_y_sus_importes_ordenados:")
-    print("Las calles y sus respectivos importes ordenados de mayor a menor son:")
-    print(calles_y_sus_importes_ordenados(datos))
+    print("Las calles y sus respectivos importes ordenados de menor a mayor son:")
+    print(calles_y_sus_importes_ordenados(datos, n=3))
 
 
-
+def test_grafica():
+    print("-------------------------------------------------------------")
+    print("TEST DE LA FUNCIÓN gráfica:")
+    print(grafica(datos))
 
 #Principal
 datos=lee_jardineria("data/jardinería_50.csv")
@@ -71,3 +74,4 @@ test_contar_calle_por_nombre()
 test_calle_mayor_numero_de_jardineros()
 test_calles_menor_importe()
 test_calles_y_sus_importes_ordenados()
+test_grafica()
