@@ -50,8 +50,8 @@ test_lee_jardineria--> verifica el funcionamiento de la función "lee_jardineria
 * **<contar_calle_por_nombre>**: Calcula el numero de trabajos que se han realizado en cada calle.
 * **<calle_mayor_numero_de_jardineros>**: Obtiene la calle con más jardineros(suma de todos los trabajadores).
 * **<calles_menor_importe>**: Agrupa las calles con su menor importe respectivamente.
-* **<calles_y_sus_importes_ordenados>**: Agrupa las calles con sus importes de menor a mayor.
-* **<grafica>**: Gráfica que muestra la evolución de los distintos importes con respecto a los trabajos realizados.
+* **<calles_y_sus_importes_ordenados>**: Agrupa las calles con sus importes de mayor a menor.
+* **<grafica>**: Gráfica que compara la evolución de los importes máximos de cada calle entre estas(las calles).
 
 
 ### \<test jardineria\>

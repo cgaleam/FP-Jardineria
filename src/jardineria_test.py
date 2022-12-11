@@ -53,7 +53,7 @@ def test_calles_menor_importe():
 def test_calles_y_sus_importes_ordenados():
     print("-------------------------------------------------------------")
     print("TEST DE LA FUNCIÓN calles_y_sus_importes_ordenados:")
-    print("Las calles y sus respectivos importes ordenados de menor a mayor son:")
+    print("Las calles y sus respectivos importes ordenados de mayor a menor son:")
     print(calles_y_sus_importes_ordenados(datos, n=3))
 
 

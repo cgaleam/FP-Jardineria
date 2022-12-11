@@ -100,7 +100,7 @@ def calle_con_mayor_numero_de_jardineros(jardineria):
             res[clave]+= j.num_jardineros
          else: 
             res[clave]=j.num_jardineros
-    return max(res, key=res.get)
+    return max(res, key=res.get) #devuelve solo la clave
 
 
 def calles_menor_importe(jardineria):
@@ -114,29 +114,34 @@ def calles_menor_importe(jardineria):
     return res 
 
 
-def calles_y_sus_importes_ordenados(jardineria, n=3):
+def calles_y_sus_importes_ordenados(jardineria, n):
     res=dict()
-    jardineria_lista_ordenada=sorted(jardineria, reverse=True)[:n]
-    for j in jardineria_lista_ordenada:
+    for j in jardineria:
          clave=j.calle
          if clave in res: 
             res[clave].append(j.importe)
          else: 
             res[clave]=[j.importe]
-    return res
+    dicc_res={clave:sorted(valores, reverse=True)[:n] for clave, valores in res.items()} #ordeno y limito a "n" valores el diccionario.
+    return dicc_res 
 
 #Bloque 4
 
 def grafica(jardineria):
-    importes = []
+    calle = []
     for j in jardineria:
-        importes.append(j.importe)
-    
+        calle.append(j.calle)
+        
+    importe=[]
+    for j in jardineria:
+        importe.append(j.importe)
+        max(importe)
     # Componemos y visualizamos la gráfica
-    plt.title(f"Evolución de importes de cada trabajo")
-    plt.xlabel("Numero de trabajos")
-    plt.ylabel("importes")
-    plt.plot(importes, label='importes')
+    plt.title(f"Importe máximo recaudado en cada calle")
+    plt.xlabel("Calles")
+    plt.ylabel("Importes")
+    plt.bar(calle,importe, label='importes', color='grey')#es gráfica de barras
     plt.legend()
     plt.show()
     
+
