@@ -1,5 +1,5 @@
 from collections import namedtuple
-from datetime import datetime
+from datetime import *
 import csv
 from convers import *
 from matplotlib import pyplot as plt
@@ -8,6 +8,7 @@ from matplotlib import pyplot as plt
 Jardineria=namedtuple('jardineria', 'calle, numero, fecha, hora, importe, num_jardineros, trabajos, contrato_mantenimiento')
 
 def lee_jardineria(nombre_fichero):
+
     res=[]
     with open(nombre_fichero,"rt", encoding='utf-8') as f:
         lector=csv.reader(f,delimiter=";")
@@ -18,10 +19,7 @@ def lee_jardineria(nombre_fichero):
             hora=conv_hora(hora)
             importe=float(importe.replace(",","."))
             num_jardineros=int(num_jardineros)
-            if contrato_mantenimiento=='S':
-                 contrato_mantenimiento=True
-            else:
-                contrato_mantenimiento=False
+            contrato_mantenimiento= conv_boolean(contrato_mantenimiento)
 
             res.append(Jardineria(calle, numero, fecha, hora, importe, num_jardineros, trabajos, contrato_mantenimiento))
             
@@ -33,46 +31,58 @@ def lee_jardineria(nombre_fichero):
 
 #Bloque 1
 
-def  filtra_por_calle_y_numero(jardineria, num_jardineros, calles):
-    res=list()
+def  filtra_por_calle_y_num_jardineros(jardineria, num_jardineros, calles):
+    
+    res= []
     for j in jardineria:
         if j.num_jardineros==num_jardineros and j.calle in calles:
             res.append((j.calle, j.numero, j.fecha))
+
     return res
 
 
 def calcular_total_contratos(jardineria):
-    res=0
+
+    res= 0
     for j in jardineria:
         if j.contrato_mantenimiento==True:
             res+=j.contrato_mantenimiento
+
     return res
 
 
 #Bloque 2
 
 def mayor_num_jardineros(jardineria):
+
     maximo= max(jardineria, key= lambda x:x.num_jardineros)
-    res=[j for j in jardineria if j.num_jardineros==maximo.num_jardineros]
-    return res
+    res=[]
+    for j in jardineria:
+        if j.num_jardineros==maximo.num_jardineros:
+            res.append(j)
 
-
-def orden_importes(jardineria):
-    conj=set((j.importe, j.calle, j.numero, j.fecha, j.hora,\
-             j.num_jardineros, j.trabajos, j.contrato_mantenimiento) for j in jardineria)
-    res=list(conj)
-    res.sort(reverse=True)
     return res
+    
+
+def mayores_importes_con_contrato_ordenados(jardineria, n):
+
+    res=[]
+    for j in jardineria:
+        if(j.contrato_mantenimiento):
+            res.append(j)
+    
+    return sorted(res, key= lambda x:x.importe, reverse=True)[:n]
 
  
-def agrupa_calle_mayor_importe(jardineria):
-    res=dict()
+def agrupa_calle_por_importe(jardineria):
+    res= dict()
     for j in jardineria:
-        importe=j.importe
-        if importe in res: #la clave ya esta en el diccionario
-            res[importe].append(j.calle)
-        else: # la clave no esta en el diccionario
-            res[importe]= [j.calle]
+        clave=j.calle
+        if clave in res: 
+            res[clave].append(j.importe)
+        else: 
+            res[clave]= [j.importe]
+    
     return res
 
 
@@ -82,52 +92,62 @@ def agrupa_calle_mayor_importe(jardineria):
 #Bloque 3
 
 def contar_calle_por_nombre(jardineria):
-    res=dict()
+
+    res= dict()
     for j in jardineria:
          clave=j.calle
          if clave in res: 
             res[clave]= res[clave]+1
          else: 
             res[clave]=1
+
     return res
 
 
 def calle_con_mayor_numero_de_jardineros(jardineria):
-    res=dict()
+
+    res= dict()
     for j in jardineria:
          clave=j.calle
          if clave in res: 
             res[clave]+= j.num_jardineros
          else: 
             res[clave]=j.num_jardineros
+
     return max(res, key=res.get) #devuelve solo la clave
 
 
 def calles_menor_importe(jardineria):
-    res=dict()
+
+    res= dict()
     for j in jardineria:
          clave=j.calle
          if clave in res: 
             res[clave]= min(j.importe, res[clave])
          else: 
             res[clave]=j.importe
+
     return res 
 
 
 def calles_y_sus_importes_ordenados(jardineria, n):
-    res=dict()
+
+    res= dict()
     for j in jardineria:
          clave=j.calle
          if clave in res: 
             res[clave].append(j.importe)
          else: 
             res[clave]=[j.importe]
+
     dicc_res={clave:sorted(valores, reverse=True)[:n] for clave, valores in res.items()} #ordeno y limito a "n" valores el diccionario.
+
     return dicc_res 
 
 #Bloque 4
 
 def grafica(jardineria):
+
     calle = []
     for j in jardineria:
         calle.append(j.calle)
@@ -136,6 +156,7 @@ def grafica(jardineria):
     for j in jardineria:
         importe.append(j.importe)
         max(importe)
+        
     # Componemos y visualizamos la gráfica
     plt.title(f"Importe máximo recaudado en cada calle")
     plt.xlabel("Calles")
@@ -143,5 +164,4 @@ def grafica(jardineria):
     plt.bar(calle,importe, label='importes', color='grey')#es gráfica de barras
     plt.legend()
     plt.show()
-    
 

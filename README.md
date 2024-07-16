@@ -1,5 +1,5 @@
-# Proyecto del Primer Cuatrimestre Fundamentos de Programación (Curso  \<XX\>/\<YY\>)
-Autor/a: \<Carlos\>   uvus:\<MTD8580\>
+# Proyecto del Primer Cuatrimestre Fundamentos de Programación (Curso  \<22\>/\<23\>)
+Autor/a: \<Carlos\>   uvus:\<\>
 
 Este es mi proyecto, en el cual se han trabajado funciones en varios modulos.
 Aquí se describen y nombran los elementos utilizados:
@@ -73,4 +73,4 @@ test_lee_jardineria--> verifica el funcionamiento de la función "lee_jardineria
 
 * **<conv_date>**: convierte la columna fecha(str) a tipo datetime.
 * **<conv_hora>**: convierte la columna hora(str) a tipo datetime.
-* ...
+* **<conv_boolean>**: convierte la columna contrato_mantenimiento(str) a tipo booleano.
