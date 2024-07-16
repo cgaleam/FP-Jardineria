@@ -45,10 +45,10 @@ test_lee_jardineria--> verifica el funcionamiento de la función "lee_jardineria
 * **<filtra_por_calle_y_numero>**: Filtra las tuplas segun la calle y numero de jardineros, devuelve calle, numero y fecha .
 * **<calcular_total_contratos>**: Calcula el total de contratos de mantenimiento.
 * **<mayor_num_jardineros>**: Obtiene las tuplas con el maximo valor en la variable num_jardineros.
-* **<orden_importes>**: Ordena las tuplas de tipo jardineria de mayor a menor importe.
-* **<agrupa_calle_mayor_importe>**: Agrupa las calles con su importe correspondiente.
+* **<mayores_importes_con_contrato_ordenados>**: Ordena las tuplas de tipo jardineria con contrato de mantenimiento de mayor a menor importe.
+* **<agrupa_calle_mayor_importe>**: Agrupa las calles con sus importes correspondiente.
 * **<contar_calle_por_nombre>**: Calcula el numero de trabajos que se han realizado en cada calle.
-* **<calle_mayor_numero_de_jardineros>**: Obtiene la calle con más jardineros(suma de todos los trabajadores).
+* **<calle_con_mayor_numero_de_jardineros>**: Obtiene la calle con más jardineros(suma de todos los trabajadores).
 * **<calles_menor_importe>**: Agrupa las calles con su menor importe respectivamente.
 * **<calles_y_sus_importes_ordenados>**: Agrupa las calles con sus importes de mayor a menor.
 * **<grafica>**: Gráfica que compara la evolución de los importes máximos de cada calle entre estas(las calles).
@@ -60,7 +60,7 @@ test_lee_jardineria--> verifica el funcionamiento de la función "lee_jardineria
 * **<test_filtra_por_calle_y_numero>**: verifica el funcionamiento de la función "filtra_por_calle_y_numero".
 * **<test_calcular_total_contratos>**: verifica el funcionamiento de la función "calcular_total_contratos".
 * **<test_mayor_num_jardineros>**: verifica el funcionamiento de la función "mayor_num_jardineros".
-* **<test_orden_importes>**: verifica el funcionamiento de la función "orden_importes".
+* **<test_mayores_importes_con_contrato_ordenados>**: verifica el funcionamiento de la función "mayores_importes_con_contrato_ordenados".
 * **<test_agrupa_calle_mayor_importe>**: verifica el funcionamiento de la función "agrupa_calle_mayor_importe".
 * **<test_contar_calle_por_nombre>**: verifica el funcionamiento de la función "contar_calle_por_nombre".
 * **<test_calle_mayor_numero_de_jardineros>**: verifica el funcionamiento de la función "calle_mayor_numero_de_jardineros".
